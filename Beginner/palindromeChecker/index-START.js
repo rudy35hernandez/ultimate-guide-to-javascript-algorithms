@@ -21,7 +21,7 @@ function palindromeChecker(text){ ////my solution
     return result
 }
 
-function palindromeChecker(text){
+function palindromeChecker(text){ //// Wins best performance
     let textLen = text.length
     for(let i = 0; i < textLen/2; i++){
         if(text[i] !== text[textLen -1 -i]){

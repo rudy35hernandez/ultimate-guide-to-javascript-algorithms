@@ -17,7 +17,7 @@ function capSentence(text) {
    return capsArray.join(' ')
 }
 
-function capSentence(text){ //// my way
+function capSentence(text){ //// My way. This is also the best performance
   return text.toLowerCase().split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
  }
 
