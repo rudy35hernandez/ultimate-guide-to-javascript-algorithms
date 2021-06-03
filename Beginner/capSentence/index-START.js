@@ -8,9 +8,27 @@ return the equivalent of the sentence when capitalised. E.g
 
 
 function capSentence(text) {
-   // Code goes here
+   let wordsArray = text.toLowerCase().split(' ')
+   let capsArray = []
+
+   wordsArray.forEach(word => {
+     capsArray.push(word[0].toUpperCase() + word.slice(1))
+   })
+   return capsArray.join(' ')
 }
 
+function capSentence(text){ //// my way
+  return text.toLowerCase().split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+ }
+
+
+ function upperFirstLetter(text){
+  let lowerText = text.toLowerCase().split(" ");
+  let capsArray = lowerText.map(word => {
+    return word.replace(word[0], word[0].toUpperCase())
+  })
+  return capsArray.join(" ")
+  }
 
 
 module.exports = capSentence
