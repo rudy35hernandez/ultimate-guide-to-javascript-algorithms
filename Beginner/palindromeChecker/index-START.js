@@ -6,7 +6,14 @@ e.g palindromeChecker('racecar') // will return true
 
 
 
-function palindromeChecker(text) {
+
+
+function palindromeChecker(text){ ////my solution
+    let reverseText = text.toLowerCase().split('').reverse().join('')
+    return text === reverseText
+  }
+
+  function palindromeChecker(text) {
     let charArray = text.toLowerCase().split('')
     let result = charArray.every((letter, index) => {
         return letter === charArray[charArray.lenght - index -1]
@@ -14,10 +21,16 @@ function palindromeChecker(text) {
     return result
 }
 
-function palindromeChecker(text){ ////my solution
-    let reverseText = text.toLowerCase().split('').reverse().join('')
-    return text === reverseText
-  }
+function palindromeChecker(text){
+    let textLen = text.length
+    for(let i = 0; i < textLen/2; i++){
+        if(text[i] !== text[textLen -1 -i]){
+            return false
+        } 
+    }
+    return true
+    
+}
 
 
 module.exports = palindromeChecker;
