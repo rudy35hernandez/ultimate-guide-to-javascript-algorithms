@@ -7,9 +7,17 @@ e.g palindromeChecker('racecar') // will return true
 
 
 function palindromeChecker(text) {
-    v// Code goes here
+    let charArray = text.toLowerCase().split('')
+    let result = charArray.every((letter, index) => {
+        return letter === charArray[charArray.lenght - index -1]
+    })
+    return result
 }
 
+function palindromeChecker(text){ ////my solution
+    let reverseText = text.toLowerCase().split('').reverse().join('')
+    return text === reverseText
+  }
 
 
 module.exports = palindromeChecker;
